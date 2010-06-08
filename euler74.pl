@@ -33,7 +33,7 @@ sub knights
     my $m = (@_ = (/\d/g));
     my $zeroes = (@_ = (/0/g));
     $m -= $zeroes;
-    $m *= $zeroes>0?$p[$m]:$p[$m-1];
+    $m *= $zeroes>0?$p[$m+$zeroes-1]:$p[$m-1];
 
     @_ = split //;
     foreach (@_) {
