@@ -8,12 +8,8 @@ my $m;
 foreach (@nums) {
     $m = $_;
     foreach (@primes) {
-        if ($_*$m<=1000000000) {
-            push @nums, $m*$_;
-        }
-        else {
-            last;
-        }
+        last unless ($m*$_<=1000000000);
+        push @nums, $m*$_;
         last unless ($m%$_);
     }
 }
